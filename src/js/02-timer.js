@@ -19,8 +19,6 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-    console.log(new Date())
 
     if (selectedDates[0] < new Date()) {
       refs.startTimerBtn.disabled = true;
@@ -39,7 +37,6 @@ function changeTimerValue() {
     let countdown = new Date(refs.timePicker.value) - new Date();
     refs.startTimerBtn.disabled = true;
     refs.timePicker.disabled = true;
-    console.log(countdown)
     if (countdown >= 0) {
       let timerData = convertMs(countdown);
         refs.days.textContent = timerData.days;
